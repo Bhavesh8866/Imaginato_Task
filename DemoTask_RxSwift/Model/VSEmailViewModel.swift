@@ -10,7 +10,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-// Data FieldViewModel : Email
 struct VSEmailViewModel : VSFieldViewModel {
     
     var value: Variable<String> = Variable("")

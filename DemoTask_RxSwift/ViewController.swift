@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var actionButton: UIButton!
     
     
-    
+    //MARK:- DIDLOAD
     override func viewDidLoad() {
         
         self.setInitParm()
@@ -98,20 +98,18 @@ class ViewController: UIViewController {
         
         everythingValid.bind(to: actionButton.rx.isEnabled).disposed(by: disposeBag)
         
-        
-        
+        //BUTTON TAP EVENT
         actionButton.rx.tap
             .`do`(onNext:  { [unowned self] in
                 self.emailTextField.resignFirstResponder()
                 self.passwordTextField.resignFirstResponder()
             }).subscribe(onNext: { [unowned self] in
-
+                
                 let isValid = viewModel.validForm()
                 if isValid {
                     viewModel.signin()
                 }
             }).disposed(by: disposeBag)
-        
     }
     
     func isEnableLogin(isEnable:Bool)  {
@@ -125,12 +123,8 @@ class ViewController: UIViewController {
         }
     }
     
-
+    
     private func configureServiceCallBacks() {
-        
-        // loading
-        //viewModel!.isLoading.asDriver().drive(actionButton.rx.isLoading).disposed(by: disposeBag)
-        
         // errors
         viewModel.errorMessage.asObservable().filter{_ in true}.bind { errorMessage in
             // Show error
@@ -148,14 +142,6 @@ class ViewController: UIViewController {
             }
             
         }.disposed(by: disposeBag)
-
-        /*
-        viewModel.isSuccess.asObservable().filter { $0 }.bind { response in
-            print(response)
-            GlobalData.showAlertTitle("DemoTask", messageStr: "Login success!", viewController: self)
-        }.disposed(by: disposeBag)*/
     }
-
-    
 }
 

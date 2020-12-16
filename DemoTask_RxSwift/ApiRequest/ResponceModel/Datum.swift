@@ -5,7 +5,6 @@
 
 import Foundation
 
-
 class Datum : NSObject, NSCoding{
 
     var user : User!

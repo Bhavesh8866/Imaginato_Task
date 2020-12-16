@@ -5,7 +5,6 @@
 //  Created by rlogical-dev-59 on 16/12/20.
 //
 
-
 import UIKit
 import Foundation
 import RealmSwift
@@ -16,7 +15,7 @@ func UniquePrimeryKey(_ userId: String) -> String {
 }
 
 
-class userDB: Object
+class UserDB: Object
 {
     @objc dynamic var createdAt : String!
     @objc dynamic var userId : String!

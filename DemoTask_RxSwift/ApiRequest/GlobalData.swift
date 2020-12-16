@@ -10,13 +10,9 @@ import UIKit
 import SystemConfiguration
 
 
-
-
 class GlobalData: NSObject {
-    
-    
+
     // MARK: - internetReachabilityStatus
-    
     enum ReachabilityStatus {
         case notReachable
         case reachableViaWWAN
@@ -24,7 +20,6 @@ class GlobalData: NSObject {
     }
 
     static var internetReachabilityStatus: ReachabilityStatus {
-        
         var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(MemoryLayout<sockaddr_in>.size)
         zeroAddress.sin_family = sa_family_t(AF_INET)
@@ -63,8 +58,7 @@ class GlobalData: NSObject {
         }
     }
     
-    
-    
+
     // MARK: - AlertView
     static func showAlertTitle(_ titleStr: String,messageStr: String , viewController : UIViewController) {
         let alert = UIAlertController(title: titleStr, message: messageStr, preferredStyle: UIAlertController.Style.alert)
@@ -72,6 +66,5 @@ class GlobalData: NSObject {
         viewController.present(alert, animated: true) {
         }
     }
-    
     
 }

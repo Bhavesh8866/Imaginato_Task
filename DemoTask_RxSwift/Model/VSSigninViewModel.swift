@@ -13,11 +13,11 @@ import Alamofire
 import RxRealm
 import RealmSwift
 
+
 class VSSigninViewModel : NSObject {
     
     let model = SigninModel()
     var resultView : RootClass?  = nil
-    
     
     private let disposeBag = DisposeBag()
     
@@ -26,11 +26,6 @@ class VSSigninViewModel : NSObject {
     
     let emailFieldViewModel = VSEmailViewModel()
     let passwordFieldViewModel = VSPasswordViewModel()
-    
-    // RX
-    //var isLoading = BehaviorRelay(value: false)
-    //var isSuccess = BehaviorRelay(value: false)
-    //var errorMessage = BehaviorRelay<String?>(value: nil)
     
     var isLoading = Variable(false)
     var isSuccess = Variable(false)
@@ -52,7 +47,6 @@ class VSSigninViewModel : NSObject {
     func validForm() -> Bool {
         email.bind(to: emailFieldViewModel.value)
         password.bind(to: passwordFieldViewModel.value)
-        
         return emailFieldViewModel.validate() && passwordFieldViewModel.validate()
     }
     
@@ -82,7 +76,7 @@ class VSSigninViewModel : NSObject {
                 self.isLoading.value = false
                 self.isSuccess.value = true
                 
-
+                
                 if self.resultView?.result == 1 {
                     self.successMessage.value = "Login Successful"
                     self.saveRealmData(user: (resultView?.data.user)!)
@@ -99,40 +93,21 @@ class VSSigninViewModel : NSObject {
                 self.successMessage.value = nil
                 self.isSuccess.value = false
             }).disposed(by: disposeBag)
-        
-        
-        /*
-        // launch request
-        let request = Request(email: model.email, password: model.password)
-        VSService.execute(request)
-            .`do`(onSubscribe: { [weak self] in
-                self?.isLoading.value = true
-            })
-            .subscribe(onNext: { [weak self] response in
-                self?.isLoading.value = false
-                self?.isSuccess.value = true
-                }, onError: { [weak self] error in
-                    self?.isLoading.value = false
-                    self?.errorMessage.value = error.message
-                    self?.isSuccess.value = false
-            }).disposed(by: disposeBag)*/
-        
     }
     
     
     func saveRealmData(user: User) {
-
         let realm = try! Realm()
         let userid = String.init(format: "%d", user.userId)
         let predicate = NSPredicate(format: "userId = %@", userid)
-        let records = realm.objects(userDB.self).filter(predicate)
-
-        let record = userDB (
+        let records = realm.objects(UserDB.self).filter(predicate)
+        
+        let record = UserDB (
             createdAt: user.createdAt,
             userId: userid,
             userName: user.userName
         )
-
+        
         if records.count > 0 {
             //UPDATE CURREN USER
             try! realm.write {
@@ -145,9 +120,7 @@ class VSSigninViewModel : NSObject {
                 realm.add(record)
             }
         }
-
     }
-
 }
 
 

@@ -10,7 +10,6 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-// Data FieldViewModel : Password
 struct VSPasswordViewModel : VSFieldViewModel, VSSecureFieldViewModel {
     
     var value: Variable<String> = Variable("")
@@ -22,10 +21,7 @@ struct VSPasswordViewModel : VSFieldViewModel, VSSecureFieldViewModel {
     var isSecureTextEntry: Bool = true
     
     func validate() -> Bool {
-
-        
         let pwdPattern = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*()\\-_=+{}|?>.<,:;~`’]{8,}$"
-        //let pwdPattern = "^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-+.,|_~`'\"]).{8,}$"
         guard validateString(value.value, pattern:pwdPattern) else {
             errorValue.value = errorMessage
             return false
