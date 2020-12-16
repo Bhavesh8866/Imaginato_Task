@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H3N-9c-7e0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Task-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DemoTask_RxSwift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*This is a invalid email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4zu-f8-M8a">
+                                <rect key="frame" x="40" y="230" width="334" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="14" id="7SE-yy-AGA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" red="0.3921568627" green="0.41568627450000001" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6cp-2t-pD9" customClass="RRTextField" customModule="DemoTask_RxSwift" customModuleProvider="target">
+                                <rect key="frame" x="40" y="188" width="334" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="b8W-U3-eDL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LIW-bI-23j" customClass="RRTextField" customModule="DemoTask_RxSwift" customModuleProvider="target">
+                                <rect key="frame" x="40" y="254" width="334" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="fG6-7R-T6X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*Passwords require at least 1 upper case, 1 lowercase, and 1 number." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QU1-Nb-7Uo">
+                                <rect key="frame" x="40" y="296" width="334" height="29"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" red="0.3921568627" green="0.41568627450000001" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u10-HD-ieT" customClass="RRFormButton" customModule="DemoTask_RxSwift" customModuleProvider="target">
+                                <rect key="frame" x="40" y="385" width="334" height="45"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Jne-yB-yJs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                                <state key="normal" title="SUBMIT">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <state key="disabled" title="SUBMIT"/>
+                                <state key="selected" title="SUBMIT"/>
+                                <state key="highlighted" title="SUBMIT"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QU1-Nb-7Uo" firstAttribute="leading" secondItem="LIW-bI-23j" secondAttribute="leading" id="0Z4-Ms-Cxw"/>
+                            <constraint firstItem="4zu-f8-M8a" firstAttribute="top" secondItem="6cp-2t-pD9" secondAttribute="bottom" constant="2" id="1gk-55-KB4"/>
+                            <constraint firstItem="LIW-bI-23j" firstAttribute="top" secondItem="6cp-2t-pD9" secondAttribute="bottom" constant="26" id="FOK-UE-xZW"/>
+                            <constraint firstItem="QU1-Nb-7Uo" firstAttribute="trailing" secondItem="LIW-bI-23j" secondAttribute="trailing" id="MeB-iI-gil"/>
+                            <constraint firstItem="LIW-bI-23j" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="40" id="N2g-kJ-pJo"/>
+                            <constraint firstItem="4zu-f8-M8a" firstAttribute="trailing" secondItem="6cp-2t-pD9" secondAttribute="trailing" id="Qbk-9G-Fug"/>
+                            <constraint firstItem="u10-HD-ieT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="TwI-3b-rTf"/>
+                            <constraint firstItem="6cp-2t-pD9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="Uwk-CT-kev"/>
+                            <constraint firstItem="4zu-f8-M8a" firstAttribute="leading" secondItem="6cp-2t-pD9" secondAttribute="leading" id="a4M-vl-m9c"/>
+                            <constraint firstAttribute="trailing" secondItem="LIW-bI-23j" secondAttribute="trailing" constant="40" id="cCg-Sk-YD8"/>
+                            <constraint firstItem="QU1-Nb-7Uo" firstAttribute="top" secondItem="LIW-bI-23j" secondAttribute="bottom" constant="2" id="ded-rw-oBP"/>
+                            <constraint firstItem="u10-HD-ieT" firstAttribute="top" secondItem="QU1-Nb-7Uo" secondAttribute="bottom" constant="60" id="glD-KJ-Rlc"/>
+                            <constraint firstItem="6cp-2t-pD9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="40" id="gwE-My-hWF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="6cp-2t-pD9" secondAttribute="trailing" constant="40" id="tm9-v6-thl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u10-HD-ieT" secondAttribute="trailing" constant="40" id="wjM-aE-MGD"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Task" id="ALj-3b-mPP"/>
+                    <connections>
+                        <outlet property="actionButton" destination="u10-HD-ieT" id="gTR-Ur-MEa"/>
+                        <outlet property="emailTextField" destination="6cp-2t-pD9" id="vk3-ia-33X"/>
+                        <outlet property="lblValidEmail" destination="4zu-f8-M8a" id="SWx-J8-CfK"/>
+                        <outlet property="lblValidpassword" destination="QU1-Nb-7Uo" id="5WN-9B-OnN"/>
+                        <outlet property="passwordTextField" destination="LIW-bI-23j" id="Ohg-fQ-30T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="907" y="128"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1Ck-6B-4bo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="H3N-9c-7e0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9UA-Kr-1L5">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="lSr-KD-70A"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wCa-yl-L0r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="127.90178571428571"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
